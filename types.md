@@ -38,7 +38,7 @@
 
 > `first = 'Anders';`
 
-> `first = 1337;`
+ `first = 1337;`
 
 ## TypeScript Supports Type Annotations
 > Adding a type annotation ensures that a variable can only ever be assigned to that type. This can be useful when declaring a variable without an initial value. Type annotations get removed when compiled to JavaScript. The type declaration is provided by appending a variable with a colon (:) and the type (eg. number).
