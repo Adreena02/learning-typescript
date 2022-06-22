@@ -4,10 +4,15 @@
 > All "primitive", or built-in data types in JavaScript are recongized by TypeScript.
 
 > `"Hello, world! // string`
+
 > `42  // string`
+
 > `true // boolean`
+
 > `null`
+
 > `undefined`
+
 ## TypeScript Type Inference
 > Type inference assumes the expected type of the variable throughout a program based on the data type of the value intially assigned to it at declaration. Type inference will log a complaint if the variable is later reassigned to a different type.
 ## The Shape of an Object
