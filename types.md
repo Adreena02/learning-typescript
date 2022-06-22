@@ -2,6 +2,7 @@
 
 ## Primitive Types
 > All "primitive", or built-in data types in JavaScript are recongized by TypeScript.
+
 > `"Hello, world! // string
 > 42  // string
 > true // boolean
