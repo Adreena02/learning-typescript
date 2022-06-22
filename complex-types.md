@@ -256,48 +256,40 @@
 ## TypeScript String Enum Variable Assignment
 > Unlike a numeric enum type which allows a number to be assigned to its member, a string enum type does not allow a string to be assigned to its member. Doing so will cause a TypeScript error.
 
-> ``
+ `enum MaritalStatus { Single = 'SINGLE', Married = 'MARRIED', Separated = 'SEPARATED', Divorced = 'DIVORCED', Widowed = 'WIDOWED' };`
 
-> ``
+ `// Assign a string to a string enum type`
 
-> ``
+ `let eligibility: MaritalStatus;`
 
-> ``
+ `eligibility = 'SEPARATED';  // Error: Type '"SEPARATED"' is not assignable to type 'MaritalStatus'.`
 
-> ``
-
-> ``
+ `eligibility = MaritalStatus.Separated;  // No error`
 
 ## TypeScript Object Type
 > A JavaScript object literal consists of property-value pairs. To type-annotate an object literal, use the TypeScript object type and specify what properties must be provided and their accompanying value types.
 
-> ``
+ `// Define an object type for car`
 
-> ``
+ `let car: {make: string, model: string, year: number};`
 
-> ``
+ `car = {make: 'Toyota', model: 'Camry', year: 2020}; // No error`
 
-> ``
+ `car = {make: 'Nissan', mode: 'Sentra', year: 2019};`
 
-> ``
+ `/* Error: Type '{make: string; mode: string; year: number;}' is not assignable to type '{make: string; model: string; year: number;}'. Object literal may only specify known properties, but 'mode' does not exist in type '{make: string; model: string; year: number;}'. Did you mean to write 'model'? */`
 
-> ``
+ `car = {make: 'Chevrolet', model: 'Monte Carlo', year: '1995'};  // Error: Type 'string' is not assignable to type 'number'.`
 
 ## TypeScript Type Alias
 > Instead of redeclaring the same complex object type everywhere it is used, TypeScript provides a simple way to reuse this object type. By creating an alias with the type keyword, you can assign a data type to it. To create a type alias, follow this syntax:
 > *type MyString = string;*
 
-> ``
+ `// This is a type alias`
 
-> ``
+ `type Student = { name: string, age: number, courses: string[] };`
 
-> ``
-
-> ``
-
-> ``
-
-> ``
+ `let boris: Student = {name: 'Boris', age: 35, courses: ['JavaScript', 'TypeScript']};`
 
 ## TypeScript Multiple Alias References
 > You can create multiple type aliases that define the same data type, and use the aliases as assignments to variables.
