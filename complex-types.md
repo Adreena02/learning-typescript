@@ -251,7 +251,7 @@
 
  `const today: Weekend = 7;       // No error`
 
- `console.log(`Today is the ${today}th day of the week!`); // Prints "Today is the 7th day of the week!"`
+ `console.log(Today is the ${today}th day of the week!); // Prints "Today is the 7th day of the week!"`
 
 ## 
 >
