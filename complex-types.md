@@ -34,7 +34,9 @@
 > `let zipcodesNH: string[] = ['03255', '03050', '03087', '03063'];`
 
 > `let zipcodesMA: string[] = ['02334', '01801'];`
+
     ---
+
 > `// two-dimensional array`
 
 > `let zipcodes: string[][] = [zipcodesNH]`
