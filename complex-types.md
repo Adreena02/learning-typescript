@@ -240,7 +240,7 @@
 
  `const prize:Prizes = Prizes.Pen;`
 
- `console.log(`*On day ${day} of the week, I got ${grade} on my test! I won a prize with ${prize} points!*`);  // Prints "On day 3 of the week, I got 80 on my test! I won a prize with 11 points!"`
+ `console.log(*On day ${day} of the week, I got ${grade} on my test! I won a prize with ${prize} points!*);  // Prints "On day 3 of the week, I got 80 on my test! I won a prize with 11 points!"`
 
 ## TypeScript Numeric Enum Variable Assignment
 > You can assign a valid numeric value to a variable whose type is a numeric enum.
