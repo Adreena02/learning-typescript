@@ -50,3 +50,52 @@
  `console.log(zipcodes);`
 
  `// prints [["03255", "03050", "03087", "03063"] ["02334", "01801"]]`
+
+## TypeScript Empty Array Initialization
+> An array of any dimension can be initialized as an empty array without generating any error.
+
+ `// one-dimensional empty array`
+
+ `let axis: string[] = [];`
+
+---
+
+ `// two-dimensional empty array`
+
+ `let coordinates: number[][] = [];`
+
+---
+
+ `axis.push('x');`
+
+ `console.log(axis);  // prints ["x"]`
+
+ `coordinates.push([3, 5]);`
+
+ `coordinates.push([7]);`
+
+ `console.log(coordinates); // prints [[3, 5], [7]]`
+
+## TypeScript Tuple Type
+> An array that has a fixed size of similar or different element types arranged in a particular sequence is defined as a tuple in TypeScript.
+
+ `// This is an array`
+
+ `let header: string[] = ['Name', 'Age', 'Smoking', 'Salary'];`
+
+---
+
+ `// This is a tuple`
+
+ `let profile: [string, number, boolean, number] = ['Kobe', 39, true, 150000];`
+
+## TypeScript Tuple Type Syntax
+> To annotate a tuple in TypeScript, add a colon (:) followed by square brackets ([...]) containing a list of comma-separated types.
+
+ `// This is a tuple`
+
+ `let profile: [string, number, boolean, number] = ['Kobe', 39, true, 150000];`
+
+ `profile[2] = 'false';   // Error: Type 'string' is not assignable to type 'boolean'.`
+
+ `profile[3] = null;      // Error: Type 'null' is not assignable to type 'number'.`
