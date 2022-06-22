@@ -35,12 +35,14 @@
 
 > `let zipcodesMA: string[] = ['02334', '01801'];`
 
-    ---
+---
 
 > `// two-dimensional array`
 
 > `let zipcodes: string[][] = [zipcodesNH]`
-    ---
+
+---
+
 > `// Pushing a one-dimensional array to a two-dimensional array`
 
 > `zipcodes.push(zipcodesMA);`
