@@ -316,23 +316,23 @@
 > In JavaScript, a function can be assigned to a variable. In TypeScript, a function type alias can be used to annotate a variable. Declare a function type alias following this syntax:
 > *type NumberArrayToNumber = (numberArray: number[]) => number*
 
-> `// This is a function type alias`
+ `// This is a function type alias`
 
-> `type NumberArrayToNumber = (numberArray: number[]) => number;`
-
----
-
-> `// This function uses a function type alias`
-
-> `let sumAll: NumberArrayToNumber = function(numbers: number[]) { let sum = 0; for (let i=0; i < numbers.length; i++) { sum += numbers[i]; } return sum; }`
+ `type NumberArrayToNumber = (numberArray: number[]) => number;`
 
 ---
 
-> `// This function also uses the same function type alias`
+ `// This function uses a function type alias`
 
-> `let computeAverage: NumberArrayToNumber = function(numbers: number[]) { return sumAll(numbers)/numbers.length; };`
+ `let sumAll: NumberArrayToNumber = function(numbers: number[]) { let sum = 0; for (let i=0; i < numbers.length; i++) { sum += numbers[i]; } return sum; }`
 
-> `console.log(computeAverage([5, 10, 15]));   // Prints 10`
+---
+
+ `// This function also uses the same function type alias`
+
+ `let computeAverage: NumberArrayToNumber = function(numbers: number[]) { return sumAll(numbers)/numbers.length; };`
+
+ `console.log(computeAverage([5, 10, 15]));   // Prints 10`
 
 ## TypeScript Generic Type Alias
 > In addition to the generic Array type, Array<T>, custom user-defined generic types are also supported by TypeScript. To define a generic type alias, use the type keyword followed by the alias name and angle brackets <...> containing a symbol for the generic type and assign it a custom definition. The symbol can be any alphanumeric character or string.
