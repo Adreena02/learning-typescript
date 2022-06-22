@@ -213,7 +213,7 @@
 
  `const studentGrade: ClassGrade = ClassGrade.Junior;`
 
- `console.log(`I am a ${studentClass} in ${studentGrade}th grade.`);  // Prints "I am a JUNIOR in 11th grade."`
+ `console.log(I am a ${studentClass} in ${studentGrade}th grade.);  // Prints "I am a JUNIOR in 11th grade."`
 
 ## TypeScript Numeric Enum Type Initializers
 > By default, TypeScript assigns a value of 0 to the first member of a numeric enum type and auto-increments the value of the rest of the members. However, you can override the default value for any member by assigning specific numeric values to some or all of the members.
