@@ -253,8 +253,8 @@
 
  `console.log(Today is the ${today}th day of the week!); // Prints "Today is the 7th day of the week!"`
 
-## 
->
+## TypeScript String Enum Variable Assignment
+> Unlike a numeric enum type which allows a number to be assigned to its member, a string enum type does not allow a string to be assigned to its member. Doing so will cause a TypeScript error.
 
 > ``
 
@@ -268,8 +268,8 @@
 
 > ``
 
-## 
->
+## TypeScript Object Type
+> A JavaScript object literal consists of property-value pairs. To type-annotate an object literal, use the TypeScript object type and specify what properties must be provided and their accompanying value types.
 
 > ``
 
@@ -283,8 +283,9 @@
 
 > ``
 
-## 
->
+## TypeScript Type Alias
+> Instead of redeclaring the same complex object type everywhere it is used, TypeScript provides a simple way to reuse this object type. By creating an alias with the type keyword, you can assign a data type to it. To create a type alias, follow this syntax:
+> *type MyString = string;*
 
 > ``
 
@@ -298,18 +299,67 @@
 
 > ``
 
-## 
->
+## TypeScript Multiple Alias References
+> You can create multiple type aliases that define the same data type, and use the aliases as assignments to variables.
 
-> ``
+ `// This is also a type alias with the same type as Student`
 
-> ``
+ `type Employee = {name: string, age: number, courses: string[]}`
 
-> ``
+ `let studentBoris: Student = {name: 'Boris', age: 35, courses: ['JavaScript', 'TypeScript']};`
 
-> ``
+ `let employeeBoris: Employee = studentBoris;     // No error`
 
-> ``
+ `console.log(studentBoris === employeeBoris);    // Prints true`
 
-> ``
+## TypeScript Function Type Alias
+> In JavaScript, a function can be assigned to a variable. In TypeScript, a function type alias can be used to annotate a variable. Declare a function type alias following this syntax:
+> *type NumberArrayToNumber = (numberArray: number[]) => number*
 
+> `// This is a function type alias`
+
+> `type NumberArrayToNumber = (numberArray: number[]) => number;`
+
+---
+
+> `// This function uses a function type alias`
+
+> `let sumAll: NumberArrayToNumber = function(numbers: number[]) { let sum = 0; for (let i=0; i < numbers.length; i++) { sum += numbers[i]; } return sum; }`
+
+---
+
+> `// This function also uses the same function type alias`
+
+> `let computeAverage: NumberArrayToNumber = function(numbers: number[]) { return sumAll(numbers)/numbers.length; };`
+
+> `console.log(computeAverage([5, 10, 15]));   // Prints 10`
+
+## TypeScript Generic Type Alias
+> In addition to the generic Array type, Array<T>, custom user-defined generic types are also supported by TypeScript. To define a generic type alias, use the type keyword followed by the alias name and angle brackets <...> containing a symbol for the generic type and assign it a custom definition. The symbol can be any alphanumeric character or string.
+
+ `// This is a generic type alias`
+
+ `type Collection<G> = { name: string, quantity: number, content: G[] };`
+
+ `let bookCollection: Collection<string> = { name: 'Nursery Books', quantity: 3, content: ['Goodnight Moon', 'Humpty Dumpty', 'Green Eggs & Ham'] };`
+
+ `let primeNumberCollection: Collection<number> = { name: 'First 5 Prime Numbers', quantity: 5, content: [2, 3, 5, 7, 11] };`
+
+## TypeScript Generic Function Type Alias
+> With the TypeScript generic function type alias, a function can take parameters of generic types and return a generic type. To turn a function into a generic function type alias, add angle brackets, <...> containing a generic type symbol after the function name, and use the symbol to annotate the parameter type and return type where applicable.
+
+ `// This is a generic function type alias`
+
+ `function findMiddleMember<M>(members: M[]): M {return members[Math.floor(members.length/2)];}`
+
+---
+
+ `// Call function for an array of strings`
+
+ `console.log(findMiddleMember<string>(['I', 'am', 'very', 'happy'])); // Prints "very"`
+
+---
+
+ `// Call function for an array of numbers`
+
+ `console.log(findMiddleMember<number>([210, 369, 102]));     // Prints 369`
